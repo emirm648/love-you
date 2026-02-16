@@ -1,0 +1,53 @@
+index.html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Love Question</title>
+
+<style>
+body {
+    font-family: Arial;
+    text-align: center;
+    margin-top: 100px;
+}
+
+button {
+    padding: 15px 25px;
+    font-size: 18px;
+    margin: 10px;
+    cursor: pointer;
+    position: relative;
+}
+</style>
+</head>
+
+<body>
+
+<h1 id="question">Do you love me?</h1>
+
+<button id="yesBtn">Yes, very much</button>
+<button id="noBtn">No, not at all</button>
+
+<script>
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+const question = document.getElementById("question");
+
+noBtn.addEventListener("mouseover", () => {
+    const x = Math.random() * (window.innerWidth - 100);
+    const y = Math.random() * (window.innerHeight - 100);
+    noBtn.style.position = "absolute";
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+});
+
+yesBtn.addEventListener("click", () => {
+    question.innerHTML = "I LOVE YOU SO MUCH ❤️";
+    yesBtn.style.display = "none";
+    noBtn.style.display = "none";
+});
+</script>
+
+</body>
+</html>
